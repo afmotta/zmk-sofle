@@ -7,7 +7,7 @@ layers:
   - {t: '3', s: '#'}
   - {t: '4', s: $}
   - {t: '5', s: '%'}
-  - +
+  - $$mdi:arrow-up-bold$$
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
@@ -20,51 +20,51 @@ layers:
   - E
   - R
   - T
-  - {t: '-', s: _}
+  - $$mdi:arrow-down-bold$$
   - Y
   - U
   - I
   - O
   - P
   - {t: \, s: '|'}
-  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-caps$$
   - A
   - S
   - D
   - F
   - G
-  - '*'
+  - $$mdi:arrow-left-bold$$
   - H
   - J
   - K
   - L
   - {t: ;, s: ':'}
-  - $$mdi:backspace-reverse-outline$$
-  - $$mdi:apple-keyboard-option$$
+  - .
+  - $$mdi:apple-keyboard-shift$$
   - Z
   - X
   - C
   - V
   - B
-  - {t: /, s: '?'}
+  - $$mdi:arrow-right-bold$$
   - N
   - M
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - $$mdi:apple-keyboard-shift$$
-  - F2
-  - LEFT WIN
-  - $$mdi:apple-keyboard-caps$$
-  - layer1
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - $$mdi:volume-off$$
   - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-option$$
+  - layer1
   - $$mdi:keyboard-space$$
-  - {t: '=', s: +}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - '2'
-  - F8
-  - {t: '''', s: '"'}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:backspace-reverse-outline$$
   layer1:
   - {t: '`', s: '~'}
   - F1
@@ -121,8 +121,8 @@ layers:
   - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
