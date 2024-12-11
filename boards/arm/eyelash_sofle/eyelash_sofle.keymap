@@ -58,7 +58,7 @@
 &kp F2          &kp LEFT_WIN  &kp CAPSLOCK  &mo 1   &kp RCTRL  &kp SPACE    &kp EQUAL     &kp ENTER  &kp SPACE  &mo 2      &kp F8   &kp SQT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp LC(V) LC(C)>;
             display-name = "LAYER0";
         };
 
