@@ -67,7 +67,7 @@
             bindings = <
 &trans  &trans  &trans    &trans    &trans     &trans       &trans  &trans  &trans            &trans             &trans          &trans           &trans
 &trans  &trans  &kp HOME  &kp UP    &kp END    &kp PG_UP    &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
-&trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN    &trans  &trans  &kp BSLH          &kp MINUS          &kp LS(LBRC)    &kp LS(RBRC)     &trans
+&trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN    &trans  &trans  &kp BSLH          &kp MINUS          &kp EQUAL       &kp COLON        &trans
 &trans  &trans  &trans    &trans    &trans     &trans       &trans  &trans  &kp APOS          &kp COMMA          &kp DOT         &kp FSLH         &trans
 &trans  &trans  &trans    &trans    &trans     &trans       &trans  &mo 3   &trans            &trans             &trans          &trans
             >;
