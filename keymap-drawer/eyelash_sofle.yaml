@@ -101,8 +101,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: \, s: '|'}
   - {t: '-', s: _}
-  - Sft+{
-  - Sft+}
+  - {t: '=', s: +}
+  - ':'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
