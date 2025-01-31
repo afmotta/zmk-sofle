@@ -52,11 +52,11 @@
 
         layer0 {
             bindings = <
-&none       &none          &none             &none               &none                 &none          &kp UP_ARROW     &none            &none                  &none                  &none       &none       &none
-&none       &kp Q          &kp W             &kp E               &kp R                 &kp T          &kp DOWN_ARROW   &kp Y            &kp U                  &kp I                  &kp O       &kp P       &none
-&none       &kp A          &kp S             &kp D               &kp F                 &kp G          &kp LEFT_ARROW   &kp H            &kp J                  &kp K                  &kp L       &kp SEMI    &none
-&none       &kp Z          &kp X             &kp C               &kp V                 &kp B          &kp RIGHT_ARROW  &kp N            &kp M                  &kp COMMA              &kp DOT     &kp FSLH    &none
-&kp C_MUTE  &kp LS(LG(A))  &kp LEFT_CONTROL  &mt LEFT_ALT GRAVE  &mt LEFT_COMMAND TAB  &lt 1 SPACE    &kp ENTER        &lt 2 BACKSPACE  &mt RIGHT_SHIFT ENTER  &mt RIGHT_CONTROL ESC  &kp DELETE  &kp DELETE
+&kp ESCAPE      &kp N1    &kp N2     &kp N3              &kp N4                &kp N5         &kp UP           &kp N6           &kp N7     &kp N8                 &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB         &kp Q     &kp W      &kp E               &kp R                 &kp T          &kp DOWN_ARROW   &kp Y            &kp U      &kp I                  &kp O    &kp P     &kp BACKSLASH
+&kp CAPS        &kp A     &kp S      &kp D               &kp F                 &kp G          &kp LEFT_ARROW   &kp H            &kp J      &kp K                  &kp L    &kp SEMI  &kp SINGLE_QUOTE
+&kp LEFT_SHIFT  &kp Z     &kp X      &kp C               &kp V                 &kp B          &kp RIGHT_ARROW  &kp N            &kp M      &kp COMMA              &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+&kp C_MUTE      &kp LEFT  &kp RIGHT  &mt LEFT_ALT GRAVE  &mt LEFT_COMMAND TAB  &lt 1 SPACE    &kp ENTER        &lt 2 BACKSPACE  &kp ENTER  &mt RIGHT_CONTROL ESC  &kp UP   &kp DOWN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -65,11 +65,11 @@
 
         Lower {
             bindings = <
-&trans  &trans  &trans    &trans    &trans     &trans       &trans  &trans  &trans            &trans             &trans          &trans           &trans
-&trans  &trans  &kp HOME  &kp UP    &kp END    &kp PG_UP    &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
-&trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN    &trans  &trans  &kp BSLH          &kp MINUS          &kp EQUAL       &kp COLON        &trans
-&trans  &trans  &trans    &trans    &trans     &trans       &trans  &trans  &kp APOS          &kp COMMA          &kp DOT         &kp FSLH         &trans
-&trans  &trans  &trans    &trans    &trans     &trans       &trans  &mo 3   &trans            &trans             &trans          &trans
+&none  &none   &none     &none     &none      &none        &none  &none      &none                  &none              &none              &none          &none
+&none  &none   &kp HOME  &kp UP    &kp END    &kp PG_UP    &none  &kp EQUAL  &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET   &kp LEFT_BRACE     &kp PIPE       &none
+&none  &none   &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN    &none  &kp PLUS   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE    &kp COLON      &none
+&none  &none   &none     &none     &none      &none        &none  &kp MINUS  &kp UNDERSCORE         &kp SINGLE_QUOTE   &kp DOUBLE_QUOTES  &kp BACKSLASH  &none
+&none  &trans  &trans    &trans    &trans     &none        &none  &mo 3      &trans                 &trans             &trans             &trans
             >;
 
             label = "LOWER";
@@ -93,7 +93,7 @@
 &kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4       &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
 &trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &rgb_ug RGB_OFF  &rgb_ug RGB_EFF    &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
 &trans     &out OUT_USB  &out OUT_BLE    &trans        &rgb_ug RGB_ON   &rgb_ug RGB_EFR    &mmv MOVE_LEFT   &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
-&trans     &sys_reset    &bootloader     &trans        &trans           &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
+&trans     &sys_reset    &bootloader     &trans        &rgb_ug RGB_ON   &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
 &trans     &trans        &trans          &trans        &trans           &trans             &mkp LCLK        &trans  &trans  &trans      &trans     &trans
             >;
 
