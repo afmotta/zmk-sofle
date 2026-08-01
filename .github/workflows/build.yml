@@ -7,5 +7,7 @@ on:
 
 jobs:
   build:
+    # Must stay on the same Zephyr generation as the `zmk` revision pinned in
+    # config/west.yml -- the v0.3 line is Zephyr 3.5, main is Zephyr 4.1.
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 

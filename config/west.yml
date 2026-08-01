@@ -2,22 +2,20 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-      # Additional modules containing boards/shields/custom code can be listed here as well.
-      # See:
-      # - https://zmk.dev/docs/features/modules
-      # - https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#projects
-    - name: gpeye
-      url-base: https://github.com/GPeye
   projects:
-    - name: eyelash_sofle
-      url: https://github.com/a741725193/zmk-sofle
-      revision: refactor
-    - name: mario-peripheral-animation
-      remote: gpeye
-      revision: main 
+    # Stock upstream ZMK, pinned rather than floating on `main`. Bump this
+    # deliberately; the `.github/workflows/build.yml` ref must be kept on a
+    # matching Zephyr generation.
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: aed236f53fc2e6377293b3c6bd4a2eb3d97dc763
       import: app/west.yml
   self:
     path: config
+
+# boards/shields/eyelash_sofle is NOT listed as a project here. The build
+# workflow passes this checkout as -DZMK_EXTRA_MODULES, and zephyr/module.yml
+# puts `boards/` on the board root, so the shield is picked up from the working
+# tree directly. Listing this repo as a project would clone a second copy and
+# pin it to a branch name -- edits would only take effect once pushed to that
+# branch, and the build would break when the branch was deleted.
