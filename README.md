@@ -1,31 +1,68 @@
 # Sofle
 
-- [中文](README.md)
-- [English](README_EN.md)
+- [English](README.md)
+- [中文](README_ZH.md)
 
-## 更新列表
+ZMK firmware configuration for the Eyelash Sofle split keyboard.
 
-- 2024/12/21
-  1. 增加zmk-studio支持（只需要刷新左手即可使用）。
-- 2024/10/24
-  1. 修改供电模式，功耗降低。
-  2. 修正RGB供电自动关闭的功能。
-- 2025/3/30 增加睡眠进入时间1小时  增加防抖时间 优化睡眠后功耗 
-- 2025/8/22
-  1. 更新了soft off。当您同时按下 Q、S 和 Z 键并按住 2 秒钟时，键盘将进入深度睡眠状态，无法通过按键唤醒。携带外出时可以使用此功能。激活方式为按一次复位开关。
-  2. 这个月，我还更新了矮轴版本sofle和corne的外壳。框架和底板加厚了，复位开关的开口也进行了调整，可以轻松按下复位开关。目前，我们仍在构思如何设计带有倾斜支架的外壳。如果您仔细检查过 PCB，您会注意到有用于扩展 IO 的预留接口。不知道有没有人能够使用它们，我会尝试一下！
-  3. 右侧键盘屏幕上的GIF动画被移除，这将显著降低右侧键盘的功耗。
+## About this fork
 
--2026/6/22 键盘支持DYA STUDIO改键了中文用户联系店主索取中文版DYA STUDIO安装包。这个上位机软件改键比ZMK studio更好用。
+This fork tracks the vendor configuration ([a741725193/zmk-sofle](https://github.com/a741725193/zmk-sofle))
+but builds against **upstream [ZMK](https://github.com/zmkfirmware/zmk)** rather
+than a third-party ZMK fork.
 
-> 请更新最新的固件。
->
+Practically, that means:
 
-## 联系我
+- The `zmk` revision in `config/west.yml` is a pinned commit of
+  `zmkfirmware/zmk` `main`. Bump it deliberately, and keep the workflow ref in
+  `.github/workflows/build.yml` on a matching Zephyr generation.
+- **ZMK Studio is supported.** **DYA Studio is not** — it depends on a custom
+  Studio RPC protocol that only exists in the vendor's ZMK fork.
+- The keyboard is built as a *shield* (`boards/shields/eyelash_sofle`) on the
+  `nice_nano` board, following upstream's Hardware Model v2 naming.
 
-如需3D打印的模型文件或者键盘有任何异常和故障，请联系380465425@qq.com
+## Update list
 
-## Sofle键位图
+- **2026/6/22** — The vendor firmware added key remapping via DYA STUDIO. *Not
+  available in this fork*; use ZMK Studio instead.
+- **2025/8/22**
+  1. Soft-off updated. Press and hold Q, S and Z together for 2 seconds and the
+     keyboard enters deep sleep; it cannot be woken with a keypress. Useful when
+     carrying it around. Wake it by pressing the reset switch once.
+  2. The low-profile Sofle and Corne cases were updated. The frame and base
+     plate are thicker, and the reset switch opening was adjusted so the switch
+     is easy to press. A case with a tilt stand is still being designed. If you
+     look closely at the PCB you will notice headers reserved for expansion IO.
+  3. The GIF animation on the right-hand display was removed, which
+     significantly reduces power draw on the right half.
+- **2025/3/30** — Sleep timeout raised to 1 hour, debounce time increased, and
+  power consumption after sleep improved.
+- **2024/12/21** — Added ZMK Studio support (only the left half needs
+  reflashing).
+- **2024/10/24**
+  1. Changed the power supply mode to reduce power consumption.
+  2. Fixed automatic shut-off of the RGB power supply.
 
-![Sofle键位图](keymap-drawer/eyelash_sofle.svg)
+> If your Sofle was last updated before 2025/8/22, please flash the latest
+> firmware.
 
+## Building
+
+Firmware is built by GitHub Actions on every push. Download the artifacts from
+the **Build ZMK firmware** workflow run and flash the `.uf2` files:
+
+| Artifact | Flash to |
+| --- | --- |
+| `eyelash_sofle_left` | left half (this is the ZMK Studio build) |
+| `eyelash_sofle_right` | right half |
+| `settings_reset` | either half, to clear stored settings and BLE bonds |
+
+## Contact
+
+For 3D-printed model files (see also `sofle-3D-MODEL.zip` in this repo), or if
+the keyboard misbehaves, contact the vendor at
+[380465425@qq.com](mailto:380465425@qq.com).
+
+## Sofle keymap
+
+![Sofle keymap](keymap-drawer/eyelash_sofle.svg)
