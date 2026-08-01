@@ -3,14 +3,6 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
   projects:
-    # This repo is also consumed as a Zephyr module (see zephyr/module.yml) so
-    # that boards/shields/eyelash_sofle is on the board root. It must point at
-    # THIS fork -- pointing it at the vendor repo means shield edits made here
-    # are ignored at build time. Switch the revision to `main` once this branch
-    # is merged.
-    - name: eyelash_sofle
-      url: https://github.com/afmotta/zmk-sofle
-      revision: claude/zmk-fork-alignment-docs-3c9og6
     # Stock upstream ZMK, pinned rather than floating on `main`. Bump this
     # deliberately; the `.github/workflows/build.yml` ref must be kept on a
     # matching Zephyr generation.
@@ -20,3 +12,10 @@ manifest:
       import: app/west.yml
   self:
     path: config
+
+# boards/shields/eyelash_sofle is NOT listed as a project here. The build
+# workflow passes this checkout as -DZMK_EXTRA_MODULES, and zephyr/module.yml
+# puts `boards/` on the board root, so the shield is picked up from the working
+# tree directly. Listing this repo as a project would clone a second copy and
+# pin it to a branch name -- edits would only take effect once pushed to that
+# branch, and the build would break when the branch was deleted.
