@@ -19,7 +19,7 @@ Practically, that means:
 - **ZMK Studio is supported.** **DYA Studio is not** — it depends on a custom
   Studio RPC protocol that only exists in the vendor's ZMK fork.
 - The keyboard is built as a *shield* (`boards/shields/eyelash_sofle`) on the
-  `nice_nano` board, following upstream's Hardware Model v2 naming.
+  `nice_nano//zmk` board, following upstream's Hardware Model v2 naming.
 
 ## Update list
 

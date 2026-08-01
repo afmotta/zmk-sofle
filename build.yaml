@@ -1,16 +1,17 @@
 ---
-# ZMK moved to Zephyr's Hardware Model v2, where nice!nano is the `nice_nano`
-# board with an `nrf52840` qualifier and a `zmk` variant. `nice_nano` on its own
-# resolves to the default revision (2.0.0), i.e. what used to be `nice_nano_v2`.
+# ZMK moved to Zephyr's Hardware Model v2. In-tree ZMK boards must be built with
+# the `zmk` variant, and revisions replaced the old duplicate definitions, so
+# `nice_nano//zmk` is the default revision (2.0.0) -- what used to be
+# `nice_nano_v2`. See https://zmk.dev/blog/2025/12/09/zephyr-4-1
 include:
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: eyelash_sofle_left nice_view
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
     artifact-name: eyelash_sofle_left
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: eyelash_sofle_right nice_view
     artifact-name: eyelash_sofle_right
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: settings_reset
